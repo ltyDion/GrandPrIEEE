@@ -1,8 +1,9 @@
 #define in1 7
 #define in2 8
+#define out1 45
 void setup() {
   // put your setup code here, to run once:
-  pinMode(A0, OUTPUT);
+  pinMode(out1, OUTPUT);
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
 
@@ -12,7 +13,6 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  
-  analogWrite(A0, 127);
-  delay(200);
+  analogWrite(out1, 50); //pwm funciton to control the speed
+  delay(100);
 }
