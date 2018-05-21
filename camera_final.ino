@@ -19,7 +19,7 @@ int turnAngle = 0;
 double prevError = 0;
 double lastTime = 0;
 double Kd = 0;
-double Kp = 1;
+double Kp = 5;
 double Ki = 0;
 int middle = 0;
 double servoMiddle = 90;
@@ -105,20 +105,9 @@ void setup()
 
   //filter
   Filter();
-  //Serial.println("Camera value after first filter");
-  /*for (int i = 0; i < 128; i++){
-    Serial.println(cameraF1[i]); 
-    } 
-  */
 
-  
   gradientF();
-  //Serial.println("gradient");
- /* for (int i = 0; i < 128; i++){
-    Serial.println(gradientF2[i]);  
-  }8？
   
-
   int maxIndex = 0;
   int maxValue = 0;
   // find middle
@@ -165,21 +154,13 @@ void setup()
   //should be
   turnAngle = output + servoMiddle;
 
-/*
   // when crossroad
   cross = false;
   crossroad();
   if(cross == true){
      turnAngle = 90;
   }
-  */
- /* Serial.println("turnAngle: ");
-  Serial.println(turnAngle);
-  Serial.println("output: ");
-  Serial.println(output);
-  Serial.println("servoMiddle:  ");
-  Serial.println(servoMiddle);
-  */
+  
   //Serial.println("turnAngle: " + turnAngle);
   
   //delay(50);
@@ -187,9 +168,6 @@ void setup()
 
   prevError = Error;
   lastTime = currentTime;
-
-  
-
   
  // timming();              // if this function is activated, dont active the ADC_READ_CAMERA() and impre() functions. use this function when the
                           // A0 pin of the camera is connected to the oscilloscope.
